@@ -40,14 +40,14 @@ Or install it yourself as:
     <%= content_for :filename do %>ファイル名<% end %>
     <%-
     columns = [
-      [:id,   type: "Number", width: 70, header: "ID"],
+      [:id,   type: "Number", width: 70, header: "ID", is_auto_fit_width: true],
       [:name, type: "String", width: 80, header: "名前"],
     ]
     -%>
     <Worksheet ss:Name="シート名">
       <Table ss:ExpandedColumnCount="<%= columns.size %>" ss:ExpandedRowCount="<%= @items_search.count+1 %>">
         <% columns.each do |column,style,width| %>
-          <%= xls_column style[:type], width: style[:width] %>
+          <%= xls_column style[:type], width: style[:width], is_auto_fit_width: style[:is_auto_fit_width] %>
         <% end %>
         <Row ss:AutoFitHeight="0">
           <% columns.each do |column,style| %>
@@ -69,7 +69,8 @@ Or install it yourself as:
 * xls_column(スタイル, width: 幅)  
   Column タグを出力する  
   `"s#{スタイル}"` の Style が使用される(定義済スタイルは下記)  
-  `width` を指定するとカラムの幅が指定される
+  `width` を指定するとカラムの幅が指定される  
+  `is_auto_fit_width` を指定すると幅を自動調整するオプションを指定する(数値と日付型のみ、とドキュメントにはある)
 * xls_data(スタイル, コンテンツ)  
   Data タグを出力する  
   `"#{スタイル}"` の Type が指定される  
