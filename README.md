@@ -66,7 +66,7 @@ Or install it yourself as:
 
 ### ヘルパー
 
-* xls_column(スタイル, width: 幅)  
+* xls_column(スタイル, width: 幅, is_auto_fit_width: boolean)  
   Column タグを出力する  
   `"s#{スタイル}"` の Style が使用される(定義済スタイルは下記)  
   `width` を指定するとカラムの幅が指定される  
