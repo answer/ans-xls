@@ -2,10 +2,7 @@
 
 xls mime type を追加、 xml spreadsheet を出力する layout と helper を提供
 
-* Rails ~> 3.1 (Engine を使用して app/views/layout を読み込んでいるため)
-
-3.0 で使用するためには、 app/views/layout 以下のファイルをアプリケーション側にコピーする必要がある  
-そのための generator とかは用意していない
+* Rails ~> 3.1 (Engine を使用して app/views/layout を読み込んでいる)
 
 ## Installation
 
