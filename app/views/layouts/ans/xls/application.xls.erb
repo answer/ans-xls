@@ -1,0 +1,38 @@
+<%- headers["Content-Disposition"] = %Q{attachment; filename="#{CGI.escape(content_for?(:filename) ? "#{yield(:filename)}.xml" : "#{controller_name}.xml")}"} -%>
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+    <Author><% if content_for? :author %><%= yield :author %><% else %><%= Ans::Xls.config.author %><% end %></Author>
+    <Created><%= Time.now.gmtime.iso8601 %></Created>
+    <Version>12.00</Version>
+  </DocumentProperties>
+  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+    <ProtectStructure>False</ProtectStructure>
+    <ProtectWindows>False</ProtectWindows>
+  </ExcelWorkbook>
+  <Styles>
+    <Style ss:ID="Default" ss:Name="Normal">
+      <Alignment ss:Vertical="Center"/>
+      <Borders/>
+      <Interior/>
+      <NumberFormat/>
+      <Protection/>
+    </Style>
+    <Style ss:ID="sText">
+      <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/>
+    </Style>
+    <Style ss:ID="sNumber">
+      <Alignment ss:Vertical="Top"/>
+    </Style>
+    <Style ss:ID="sString">
+      <Alignment ss:Horizontal="Left" ss:Vertical="Top"/>
+    </Style>
+    <%= yield :style %>
+  </Styles>
+<%= yield %>
+</Workbook>
