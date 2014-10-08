@@ -1,5 +1,7 @@
 # Ans::Xls
 
+*** この gem は開発は終了しました -> ans-xml_spreadsheet ***
+
 xls mime type を追加、 xml spreadsheet を出力する layout と helper を提供
 
 * Rails ~> 3.1 (Engine を使用して app/views/layout を読み込んでいる)
