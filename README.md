@@ -1,6 +1,6 @@
 # Ans::Xls
 
-*この gem は開発は終了しました -> ans-xml_spreadsheet*
+*この gem の開発は終了しました -> ans-xml_spreadsheet*
 
 xls mime type を追加、 xml spreadsheet を出力する layout と helper を提供
 
