@@ -1,4 +1,4 @@
-<%- headers["Content-Disposition"] = %Q{attachment; filename="#{CGI.escape(content_for?(:filename) ? "#{yield(:filename)}.xml" : "#{controller_name}.xml")}"} -%>
+<%- headers["Content-Disposition"] = %Q{attachment; filename="#{CGI.escape(content_for?(:filename) ? "#{yield(:filename)}.xls" : "#{controller_name}.xls")}"} -%>
 <?xml version="1.0"?>
 <?mso-application progid="Excel.Sheet"?>
 <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
